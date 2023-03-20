@@ -8,5 +8,5 @@
 require 'faker'
 
 40.times do
-  User.create!(first_name: Faker::Name.unique.first_name, last_name: Faker::Name.last_name, email: Faker::Company.buzzword )
+  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Company.buzzword)
 end
