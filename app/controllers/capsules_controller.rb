@@ -11,7 +11,6 @@ class CapsulesController < ApplicationController
 
   def create
     @capsule = Capsule.new(capsule_params)
-    @capsule.user = current_user
     if @capsule.save
       redirect_to capsule_path(@capsule)
     else
