@@ -1,0 +1,8 @@
+2023-03-20 16:09:04.336 CET [27212] LOG:  starting PostgreSQL 14.7 (Homebrew) on x86_64-apple-darwin21.6.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.202), 64-bit
+2023-03-20 16:09:04.337 CET [27212] LOG:  listening on IPv6 address "::1", port 5432
+2023-03-20 16:09:04.338 CET [27212] LOG:  listening on IPv6 address "fe80::1%lo0", port 5432
+2023-03-20 16:09:04.338 CET [27212] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-03-20 16:09:04.339 CET [27212] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-03-20 16:09:04.345 CET [27213] LOG:  database system was shut down at 2023-03-20 16:08:55 CET
+2023-03-20 16:09:04.352 CET [27212] LOG:  database system is ready to accept connections
+2023-03-20 16:09:30.979 CET [27370] FATAL:  database "Capsule_Corp_development" does not exist
