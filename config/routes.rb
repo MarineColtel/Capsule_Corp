@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :users
   resources :capsules
   resources :reviews
+  resources :bookings
 end
