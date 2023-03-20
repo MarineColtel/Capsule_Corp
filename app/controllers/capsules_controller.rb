@@ -44,6 +44,6 @@ class CapsulesController < ApplicationController
   end
 
   def capsule_params
-    params.require(:capsule).permit(:name, :year, :advices, :price_per_day, photos: [])
+    params.require(:capsule).permit(:name, :year, :advices, :price_per_day, :description, photos: [])
   end
 end
