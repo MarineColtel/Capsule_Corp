@@ -45,8 +45,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_21_111135) do
   create_table "bookings", force: :cascade do |t|
     t.bigint "capsule_id", null: false
     t.bigint "user_id", null: false
-    t.bigint "review_id", null: false
-    t.decimal "total_price"
     t.date "start_date"
     t.date "end_date"
     t.bigint "review_id", null: false
