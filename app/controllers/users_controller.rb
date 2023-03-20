@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :set_user, only: [:show, :destroy]
   def index
     @users = User.all
   end
@@ -13,9 +13,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @users = User.new(User_params)
-    @users.save
-    redirect_to users_path
+    @users = User.new(user_params)
+    @users.user = current_user
+    if @users.save
+      redirect_to users_path(@users)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 #UPDATE DU PROFIL UTILISATEUR
   def edit
@@ -33,8 +37,6 @@ class UsersController < ApplicationController
     @users.destroy
     redirect_to users_path, status: :see_other
   end
-end
-
 end
 
 # get 'tasks', to: 'tasks#index' # afficher tout les tach
