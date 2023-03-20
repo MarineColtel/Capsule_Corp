@@ -1,0 +1,12 @@
+<h1>Liste des Capsules</h1>
+
+<div class="capsules-container">
+  <% @capsules.each do |capsule| %>
+    <div class="capsule-card">
+      <h3><%= capsule.name %></h3>
+      <p>Année: <%= capsule.year %></p>
+      <p>Tarif par jour: <%= capsule.price_per_day %></p>
+      <%= link_to 'Show', capsule %>
+    </div>
+  <% end %>
+</div>
