@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
   def index
     # before_action :set_user, only: [:show, :destroy]
-    @users = User.all
   end
 
   # DETAIL SUR L'UTILISATEUR
 
   def show
-    @users = User.find(params[:id])
+    @user = current_user
   end
 
   # CREATION D'UN NOUVEL UTILISATEUR

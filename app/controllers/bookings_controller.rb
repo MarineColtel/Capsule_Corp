@@ -13,18 +13,21 @@ class BookingsController < ApplicationController
   # end
 
   def create
-    @capsule = Capsule.find(params[:id])
+    @capsule = Capsule.find(params[:capsule_id])
     @booking = Booking.new(booking_params)
-    if @booking.save
-      redirect_to capsule_path(@capsule)
+    @booking.capsule = @capsule
+    @booking.user = current_user
+    if @booking.save!
+      redirect_to user_path(@booking.user)
     else
       render 'capsules/show', status: :unprocessable_entity
     end
   end
 
   def destroy
+    @user = current_user
     @booking.destroy
-    redirect_to @booking
+    redirect_to user_path(@user), status: :see_other
   end
 
   private
@@ -34,6 +37,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :total_price)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
