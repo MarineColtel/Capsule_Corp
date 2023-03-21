@@ -17,6 +17,13 @@
 //   background-image: assert-url('portal.png');
 // }
 
+
+// CSS SIGN_UP
+.main_container{
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
 .container_sign_up{
 
   width: 400px;
@@ -29,4 +36,10 @@
 }
 .container_sign_up h1{
   text-align: center;
+}
+// HOME PAGE
+.container_home{
+  padding: 32px;
+  border-radius: 5px;
+
 }
