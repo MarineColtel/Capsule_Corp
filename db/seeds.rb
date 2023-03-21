@@ -1,26 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
+
+# Destruction des Booking en premier pour pouvoir supprimer les User ensuite
+Booking.destroy_all
 
 User.destroy_all
 
-2.times do
-  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,
-    email: Faker::Internet.email, password: "123456")
+20.times do
+  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "123456")
 end
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 
 Capsule.destroy_all
 
@@ -109,4 +96,35 @@ CAPSULES_DATA = [
 
 CAPSULES_DATA.each do |capsule|
   Capsule.create!(capsule)
+end
+
+# Seeds pour booking
+
+40.times do
+  start = Faker::Date.between(from: '2020-01-01T00:00:00.000Z', to: '2030-01-01T00:00:00.000Z')
+  fin = start + 100
+  capsule = Capsule.all.sample
+  user = User.all.sample
+  params = {
+    capsule_id: capsule.id,
+    user_id: user.id,
+    start_date: start,
+    end_date: fin,
+    total_price: capsule.price_per_day * (fin - fin)
+  }
+  Booking.create!(params)
+end
+
+# Seeds pour reviews sur la première moitié des bookings
+Review.destroy_all
+
+y = Booking.first.id
+while y <= (Booking.first.id + (Booking.count / 2))
+  params = {
+    comment: Faker::Hipster.sentence,
+    rating: rand(5),
+    booking_id: y
+  }
+  Review.create!(params)
+  y += 1
 end
