@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :capsules do
     resources :bookings
+    collection do
+      get :search
+    end
   end
 
   resources :bookings do

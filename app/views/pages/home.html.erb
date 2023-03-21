@@ -1,6 +1,13 @@
 <div class="background">
   <h1>Liste des Capsules</h1>
 
+    <%= simple_form_for :search, url: search_capsules_path, method: :get do |f| %>
+    <div class="form-group">
+      <%= f.input :query, label: 'Recherche', class: "form-control" %>
+    </div>
+    <%= f.button :submit, "Rechercher", class: "btn btn-primary" %>
+  <% end %>
+
   <div class="container d-flex flex-column justify-content-center align-item-center mt-3">
     <% @capsules.each do |capsule| %>
       <div class=".capsule-card m-3">
