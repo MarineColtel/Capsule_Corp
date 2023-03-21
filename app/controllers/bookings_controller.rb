@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %i[show edit update destroy]
+  before_action :set_booking, only: %i[show destroy]
 
   def index
     @bookings = Booking.all
@@ -8,27 +8,17 @@ class BookingsController < ApplicationController
   def show
   end
 
-  def new
-    @booking = Booking.new
-  end
+  # def new
+  #   @booking = Booking.new
+  # end
 
   def create
+    @capsule = Capsule.find(params[:id])
     @booking = Booking.new(booking_params)
     if @booking.save
-      redirect_to @booking
+      redirect_to capsule_path(@capsule)
     else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
-  def edit
-  end
-
-  def update
-    if @booking.update(booking_params)
-      redirect_to @booking
-    else
-      render :edit, status: :unprocessable_entity
+      render 'capsules/show', status: :unprocessable_entity
     end
   end
 
