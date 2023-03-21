@@ -1,6 +1,11 @@
 <div>
-    <h1><%= @capsule.name %></h1>
-    <p>Retrouvez-vous en <%= @capsule.year %> le temps d'un voyage inoubliable</p>
+    <h1><%= @capsule.name %> - <%= @capsule.year %></h1>
+    <img src="<%= @capsule.picture %>" alt="">
+    <h3 class="mb-5"><%= @capsule.description %></h3>
+    <h4>Nos conseils</h4>
+    <p><%= @capsule.advices %></p>
+    <h4>Tarif</h4>
+    <p><%= @capsule.price_per_day %> $ / jour</p>
   </div>
 </div>
 
