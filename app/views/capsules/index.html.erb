@@ -1,0 +1,20 @@
+<h1>Liste des Capsules</h1>
+
+<div class="container d-flex justify-content-center align-item-center mt-3">
+  <% @capsules.each do |capsule| %>
+    <div class=".capsule-card m-3">
+      <%= image_tag capsule.photo.first %>
+      <div class=".capsule-card-infos">
+        <div>
+          <div class="d-flex justify-content-center align-item-center">
+            <h2><%= capsule.name %></h2>
+            <p><%= capsule.year %></p>
+          </div>
+            <p><%= capsule.description %></p>
+        </div>
+        <h2 class="card-trip-pricing">Tarif par jour : <%= capsule.price_per_day %>€</h2>
+        <%= link_to 'Show', capsule_path(capsule) %>
+      </div>
+    </div>
+  <% end %>
+</div>

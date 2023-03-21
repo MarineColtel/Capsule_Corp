@@ -1,0 +1,17 @@
+<div>
+    <h1><%= @capsule.name %></h1>
+    <p>Retrouvez-vous en <%= @capsule.year %> le temps d'un voyage inoubliable</p>
+  </div>
+</div>
+
+<div>
+  <%= @capsule.photos %>
+</div>
+
+<div class="capsule-description">
+  <h2>Description de l'expérience</h2>
+  <p><%= @capsule.description %></p>
+  <br>
+  <h2>Petite liste des choses à faire avant de partir</h2>
+  <p><%= @capsule.advices %></p>
+</div>
