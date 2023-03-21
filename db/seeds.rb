@@ -38,7 +38,7 @@ CAPSULES_DATA = [
     year: 1998,
     advices: "Portez vos couleurs françaises et profitez de l'atmosphère électrique.",
     price_per_day: 200.0,
-    picture: "https://example.com/world_cup_1998.jpg",
+    picture: "https://picsum.photos/300/400",
     description: "Voyez la victoire de la France lors de la finale de la Coupe du Monde 1998."
   },
   {
@@ -46,7 +46,7 @@ CAPSULES_DATA = [
     year: 1969,
     advices: "Apportez un appareil photo et profitez de la vue spectaculaire sur la Terre.",
     price_per_day: 300.0,
-    picture: "https://example.com/moon_landing.jpg",
+    picture: "https://picsum.photos/300/400",
     description: "Accompagnez Neil Armstrong et Buzz Aldrin lors de leur historique marche sur la Lune."
   },
   {
@@ -54,7 +54,7 @@ CAPSULES_DATA = [
     year: 1889,
     advices: "Prenez des photos et admirez la vue imprenable sur Paris.",
     price_per_day: 100.0,
-    picture: "https://example.com/eiffel_tower.jpg",
+    picture: "https://picsum.photos/300/400",
     description: "Assistez à l'inauguration de la Tour Eiffel lors de l'Exposition universelle de 1889."
   },
   {
@@ -62,7 +62,7 @@ CAPSULES_DATA = [
     year: 1895,
     advices: "Assistez à l'un des premiers films de l'histoire du cinéma.",
     price_per_day: 80.0,
-    picture: "https://example.com/lumiere_brothers.jpg",
+    picture: "https://picsum.photos/300/400",
     description: "Voyez la première projection publique des frères Lumière, marquant le début du cinéma."
   },
   {
@@ -70,7 +70,7 @@ CAPSULES_DATA = [
     year: 1963,
     advices: "Écoutez l'un des discours les plus emblématiques de l'histoire.",
     price_per_day: 120.0,
-    picture: "https://example.com/martin_luther_king.jpg",
+    picture: "https://picsum.photos/300/400",
     description: "Rejoignez la foule lors du célèbre discours « I Have a Dream » de Martin Luther King."
   },
   {
@@ -78,7 +78,7 @@ CAPSULES_DATA = [
     year: 1886,
     advices: "Prenez des photos et profitez de la cérémonie d'inauguration.",
     price_per_day: 100.0,
-    picture: "https://example.com/statue_of_liberty.jpg",
+    picture: "https://picsum.photos/300/400",
     description: "Assistez à l'inauguration de la Statue de la Liberté, un symbole d'amitié entre la France et les États-Unis."
   },
   {
@@ -86,7 +86,7 @@ CAPSULES_DATA = [
     year: 1824,
     advices: "Profitez de l'une des plus belles œuvres musicales jamais composées.",
     price_per_day: 110.0,
-    picture: "https://example.com/beethoven_ninth.jpg",
+    picture: "https://picsum.photos/300/400",
     description: "Vivez la première représentation de la 9e symphonie de Beethoven à Vienne."
   },
   {
@@ -94,7 +94,7 @@ CAPSULES_DATA = [
     year: -2580,
     advices: "Observez les techniques de construction et les efforts déployés pour bâtir ces monuments.",
     price_per_day: 250.0,
-    picture: "https://example.com/pyramids_construction.jpg",
+    picture: "https://picsum.photos/300/400",
     description: "Voyagez dans le temps pour assister à la construction des pyramides égyptiennes."
   },
   {
@@ -102,7 +102,7 @@ CAPSULES_DATA = [
     year: 1903,
     advices: "Soyez témoin de la naissance de l'aviation moderne.",
     price_per_day: 90.0,
-    picture: "https://example.com/wright_brothers.jpg",
+    picture: "https://picsum.photos/300/400",
     description: "Assistez au premier vol motorisé et contrôlé des frères Wright à Kitty Hawk, en Caroline du Nord."
   }
 ]
