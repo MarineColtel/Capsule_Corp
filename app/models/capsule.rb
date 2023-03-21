@@ -7,5 +7,5 @@ class Capsule < ApplicationRecord
   validates :year, presence: true
   validates :advices, presence: true
   validates :price_per_day, presence: true
-  validates :photos, presence: true
+  validates :picture, presence: true
 end
