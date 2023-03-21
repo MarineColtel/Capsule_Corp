@@ -22,7 +22,7 @@ end
 #   Character.create(name: "Luke", movie: movies.first)
 
 Capsule.destroy_all
-capsules_data = [
+CAPSULES_DATA = [
   {
     name: "Concert Live Aid - Queen",
     year: 1985,
@@ -105,7 +105,6 @@ capsules_data = [
   }
 ]
 
-
-capsules_data.each do |capsules|
-  Capsule.create!(capsules)
+CAPSULES_DATA.each do |capsule|
+  Capsule.create!(capsule)
 end
