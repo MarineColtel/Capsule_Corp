@@ -28,4 +28,26 @@
         <%= link_to "Annuler ma réservation", user_path(@user), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       <% end %>
     </div>
+<div>
+  <h3 class="booking-title">Vos réservations</h1>
+  <div class="container booking-container">
+    <% @user.bookings.each do |booking| %>
+      <div class="booking-card">
+        <%= cl_image_tag booking.capsule.photos.first.key, class: "booking-image" %>
+        <div class="booking-card-infos">
+          <div class="booking-details">
+            <h2 class="booking-name"><%= booking.capsule.name %></h2>
+            <p class="booking-year"><%= booking.capsule.year %></p>
+          </div>
+          <div>
+            <h4>Vos dates de voyage</h4>
+            <p class="booking-description"><%= booking.start_date %></p>
+            <p class="booking-description"><%= booking.end_date %></p>
+          </div>
+          <h2 class="card-trip-pricing">Le tarif par jour : <%= booking.capsule.price_per_day %>€</h2>
+          <%= link_to "Annuler ma réservation", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
