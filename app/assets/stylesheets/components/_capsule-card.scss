@@ -1,7 +1,7 @@
 .capsules-title {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   color: $gray;
 }
 
@@ -10,6 +10,8 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 2rem;
   margin-bottom: 3rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .capsule-card {
@@ -40,10 +42,12 @@
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  text-align: center;
 }
 
 .capsule-details {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   font-size: 1.1rem;
@@ -53,6 +57,7 @@
   font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .capsule-year {
@@ -65,6 +70,7 @@
   color: #555;
   line-height: 1.4;
   margin-bottom: 1rem;
+
 }
 
 .card-trip-pricing {
@@ -82,6 +88,8 @@
   padding: 0.5rem 1rem;
   border-radius: 4px;
   transition: background-color 0.3s;
+  text-align: center;
+  font-size: 1.1rem;
 }
 
 .capsule-show-link:hover {

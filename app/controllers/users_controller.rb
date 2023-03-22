@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def index
     # before_action :set_user, only: [:show, :destroy]
-    @users = User.all
   end
 
   # DETAIL SUR L'UTILISATEUR

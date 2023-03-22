@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
-  resources :users
+  resources :users do
+    resources :bookings, only: %i[show destroy]
+  end
+
   resources :capsules, only: %i[destroy]
 end
