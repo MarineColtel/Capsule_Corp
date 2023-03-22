@@ -1,25 +1,25 @@
-<div class="container_show">
+<h1><%= @capsule.name %> - <%= @capsule.year %></h1>
+<div class="container_show d-flex">
   <div id="capsule-top">
-    <h1><%= @capsule.name %> - <%= @capsule.year %></h1>
     <div class="capsule-show-image">
         <%= cl_image_tag @capsule.photos.first.key %>
     </div>
     <h3 class="mb-5"><%= @capsule.description %></h3>
-    <div class="d-flex justify-content-between align-items-center">
-      <div class="border px-3">
-        <h4>Nos conseils</h4>
+    <div class="d-flex justify-content-between mt-4">
+      <div id="conseil" class="border px-3">
+        <h4 class="text-center">Nos conseils</h4>
         <p><%= @capsule.advices %></p>
       </div>
       <div class="cadre-gris">
         <h4>Tarif</h4>
-        <p><%= @capsule.price_per_day %> $ / jour</p>
+        <p><%= @capsule.price_per_day %> €/j</p>
       </div>
     </div>
   </div>
 
   <div id="booking">
     <h2>Réservez maintenant ce voyage temporel</h2>
-    <div class="w-50 m-auto">
+    <div class="m-auto">
       <%= render 'form_new_booking' %>
     </div>
   </div>
