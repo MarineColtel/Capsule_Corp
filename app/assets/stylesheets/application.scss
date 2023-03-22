@@ -17,12 +17,30 @@
 //   background-image: assert-url('portal.png');
 // }
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #e0e0e0;
+}
+
+
+h1 {
+  font-family: "Sora", sans-serif;
+}
+h2 {
+  font-family: "Sora", sans-serif;
 
 // CSS SIGN_UP
 .main_container{
   display: flex;
   justify-content: center;
   margin-top: 32px;
+
 }
 .container_sign_up{
 

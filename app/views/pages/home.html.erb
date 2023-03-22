@@ -1,29 +1,45 @@
 
+<header class="header">
+  <video class="header-video" autoplay muted loop>
+    <source src="<%= video_path('/videos/header-video.mp4') %>" type="video/mp4">
+  </video>
+
+  <div class="header-overlay"></div>
+
+  <div class="header-content">
+    <h1 class="header-title">Capsule Corp</h1>
+    <p class="header-subtitle">Découvrez le futur du voyage spatial</p>
+
+
 
 <div class="container_home">
 <h1>Liste des Capsules</h1>
 <div id="search">
     <%= simple_form_for :search, url: search_capsules_path, method: :get do |f| %>
-    <div class="form-group">
-      <%= f.input :query, label: 'Recherche', class: "form-control" %>
-    </div>
-    <%= f.button :submit, "Rechercher", class: "btn btn-primary" %>
-  <% end %>
-</div>
-  <div class="container d-flex flex-column justify-content-center align-item-center mt-3">
+      <div class="form-group">
+        <%= f.input :query, label: 'Le voyage commence ici', class: "form-control" %>
+      </div>
+      <%= f.button :submit, "Rechercher", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</header>
+
+
+<!-- List of Capsules -->
+<div class='main-capsule-container'>
+  <h1 class="capsules-title">Liste des Capsules</h1>
+  <div class="container capsules-container">
     <% @capsules.each do |capsule| %>
-      <div class=".capsule-card m-3">
-        <%= image_tag capsule.picture %>
-        <div class=".capsule-card-infos">
-          <div>
-            <div class="d-flex justify-content-center align-item-center">
-              <h2><%= capsule.name %></h2>
-              <p><%= capsule.year %></p>
-            </div>
-              <p><%= capsule.description %></p>
+      <div class="capsule-card">
+        <%= image_tag capsule.picture, class: "capsule-image" %>
+        <div class="capsule-card-infos">
+          <div class="capsule-details">
+            <h2 class="capsule-name"><%= capsule.name %></h2>
+            <p class="capsule-year"><%= capsule.year %></p>
           </div>
+          <p class="capsule-description"><%= capsule.description %></p>
           <h2 class="card-trip-pricing">Tarif par jour : <%= capsule.price_per_day %>€</h2>
-          <%= link_to 'Show', capsule_path(capsule) %>
+          <%= link_to 'Show', capsule_path(capsule), class: "capsule-show-link" %>
         </div>
       </div>
     <% end %>
