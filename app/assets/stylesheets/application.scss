@@ -16,6 +16,7 @@
 // body {
 //   background-image: assert-url('portal.png');
 // }
+
 *{
   margin: 0;
   padding: 0;
@@ -27,11 +28,19 @@ body{
   background-color: #e0e0e0;
 }
 
+
 h1 {
   font-family: "Sora", sans-serif;
 }
 h2 {
   font-family: "Sora", sans-serif;
+
+// CSS SIGN_UP
+.main_container{
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+
 }
 .container_sign_up{
 
@@ -45,4 +54,10 @@ h2 {
 }
 .container_sign_up h1{
   text-align: center;
+}
+// HOME PAGE
+.container_home{
+  padding: 32px;
+  border-radius: 5px;
+
 }

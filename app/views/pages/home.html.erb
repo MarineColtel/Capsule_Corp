@@ -1,3 +1,4 @@
+
 <header class="header">
   <video class="header-video" autoplay muted loop>
     <source src="<%= video_path('/videos/header-video.mp4') %>" type="video/mp4">
@@ -9,6 +10,11 @@
     <h1 class="header-title">Capsule Corp</h1>
     <p class="header-subtitle">Découvrez le futur du voyage spatial</p>
 
+
+
+<div class="container_home">
+<h1>Liste des Capsules</h1>
+<div id="search">
     <%= simple_form_for :search, url: search_capsules_path, method: :get do |f| %>
       <div class="form-group">
         <%= f.input :query, label: 'Le voyage commence ici', class: "form-control" %>
@@ -22,7 +28,6 @@
 <!-- List of Capsules -->
 <div class='main-capsule-container'>
   <h1 class="capsules-title">Liste des Capsules</h1>
-
   <div class="container capsules-container">
     <% @capsules.each do |capsule| %>
       <div class="capsule-card">
