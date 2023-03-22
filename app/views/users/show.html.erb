@@ -23,6 +23,6 @@
     <%= booking.capsule.name %>
     <%= booking.start_date %>
     <%= booking.end_date %>
-    <%= link_to "Annuler ma réservation", user_bookings_path(@user), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <%= link_to "Annuler ma réservation", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   <% end %>
 </div>
