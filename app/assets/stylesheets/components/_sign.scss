@@ -1,0 +1,19 @@
+.main_container{
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+
+}
+.container_sign_up{
+
+  width: 400px;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -2px 2px 34px -12px rgba(0,0,0,0.75);
+  padding: 32px;
+
+}
+.container_sign_up h1{
+  text-align: center;
+}

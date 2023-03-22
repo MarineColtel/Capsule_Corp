@@ -1,28 +1,31 @@
-<h1>Mon profil utilisateur</h1>
-<div class="container">
+<h3>MON PROFIL UTILISATEUR</h3>
+<div class="container_profil">
   <div class="identity">
-    <div class="avatar">
-    <%= cl_image_tag("avatar_lu1q0p", class: "avatar") %>
+    <div class="avatar-container">
+      <%= cl_image_tag("avatar_lu1q0p", class: "avatar") %>
     </div>
+
     <div class="informations">
       <div class="full-username">
-        <p class="first-name">Prenom: <%= @user.first_name %></p>
-        <p class="last-name">Nom: <%= @user.last_name %></p>
-        <p class="email" >Email: <%= @user.email %></p>
-    </div>
-     <div class="user-profile">
-        <button class= "btn.primary">PARTICULIER</button>
-        <button class= "btn.primary">PROFESSIONNEL</button>
-    </div>
+          <p class="first-name">Prenom: <%= @user.first_name %></p>
+          <p class="last-name">Nom: <%= @user.last_name %></p>
+          <p class="email" >Email: <%= @user.email %></p>
+      </div>
+      <div class="user-profile">
+          <button class= "btn btn-primary">PARTICULIER</button>
+          <button class= "btn btn-primary">PROFESSIONNEL</button>
+      </div>
     </div>
   </div>
 
-<h3>Your bookings</h3>
-<div class="container">
-  <% @user.bookings.each do |booking| %>
-    <%= booking.capsule.name %>
-    <%= booking.start_date %>
-    <%= booking.end_date %>
-    <%= link_to "Annuler ma réservation", user_path(@user), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  <% end %>
+
+  <h3>MES BOOKING</h3>
+    <div class="container-booking">
+      <% @user.bookings.each do |booking| %>
+        <%= booking.capsule.name %>
+        <%= booking.start_date %>
+        <%= booking.end_date %>
+        <%= link_to "Annuler ma réservation", user_path(@user), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <% end %>
+    </div>
 </div>
