@@ -1,4 +1,4 @@
-<%= simple_form_for @capsule, html: { multipart: true } do |f| %>
+<%= simple_form_for @capsule, url: create_capsule_user_path, method: :post, html: { multipart: true } do |f| %>
   <%= f.input :name, label: "Nom de la capsule" %>
   <%= f.input :year, label: "Année" %>
   <%= f.input :description, label: "Description", as: :text %>

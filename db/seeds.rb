@@ -129,6 +129,7 @@ CAPSULES_DATA.each do |capsule|
   file = URI.open(capsule[:photo_url])
   nouveau = Capsule.new(capsule[:params])
   nouveau.photos.attach(io: file, filename: "image.png", content_type: "image/png")
+  nouveau.user = User.all.sample
   nouveau.save!
 end
 
@@ -144,7 +145,7 @@ end
     user_id: user.id,
     start_date: start,
     end_date: fin,
-    total_price: capsule.price_per_day * (fin - fin)
+    total_price: capsule.price_per_day * (fin - start)
   }
   Booking.create!(params)
 end

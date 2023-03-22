@@ -16,7 +16,8 @@ class CapsulesController < ApplicationController
   end
 
   def create
-    @capsule = Capsule.new(capsule_params)
+    @user = User.find(params[:user_id])
+    @capsule = @user.capsules.new(capsule_params)
     if @capsule.save
       redirect_to capsule_path(@capsule)
     else
@@ -51,6 +52,6 @@ class CapsulesController < ApplicationController
   end
 
   def capsule_params
-    params.require(:capsule).permit(:name, :year, :advices, :price_per_day, :description, photos: [])
+    params.require(:capsule).permit(:name, :year, :advices, :price_per_day, :description, :picture, photos: [])
   end
 end
