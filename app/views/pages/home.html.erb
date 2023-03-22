@@ -36,7 +36,9 @@
             <h2 class="capsule-name"><%= capsule.name %></h2>
             <p class="capsule-year"><%= capsule.year %></p>
           </div>
-          <p class="capsule-description"><%= capsule.description %></p>
+          <div>
+            <p class="capsule-description"><%= capsule.description %></p>
+          </div>
           <h2 class="card-trip-pricing">Tarif par jour : <%= capsule.price_per_day %>€</h2>
           <%= link_to 'Show', capsule_path(capsule), class: "capsule-show-link" %>
         </div>
