@@ -25,9 +25,10 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @user = current_user
     @booking.destroy
+    @user = current_user
     redirect_to user_bookings_path(@user), status: :see_other
+    raise
   end
 
   private
