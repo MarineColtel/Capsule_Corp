@@ -1,0 +1,25 @@
+.identity{
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: -2px 2px 34px -12px rgba(0,0,0,0.75);
+  padding: 32px;
+  width: 550px;
+  display: flex;
+
+}
+.full-username{
+  display: block;
+}
+.identity .avatar{
+  height: 100px;
+  width: 100px;
+  margin-right: 32px;
+}
+
+
+.container{
+  display: flex;
+  justify-content: center;
+
+}
