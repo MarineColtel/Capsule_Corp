@@ -5,17 +5,18 @@
         <%= cl_image_tag @capsule.photos.first.key %>
     </div>
     <h3 class="mb-5"><%= @capsule.description %></h3>
-  </div>
-  <div class="d-flex justify-content-between align-items-center">
-    <div id="capsule-bottom">
-      <h4>Nos conseils</h4>
-      <p><%= @capsule.advices %></p>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="border px-3">
+        <h4>Nos conseils</h4>
+        <p><%= @capsule.advices %></p>
+      </div>
+      <div class="cadre-gris">
+        <h4>Tarif</h4>
+        <p><%= @capsule.price_per_day %> $ / jour</p>
+      </div>
     </div>
-    <div id="tarif" class="border">
-      <h4>Tarif</h4>
-      <p><%= @capsule.price_per_day %> $ / jour</p>
-    </div>
   </div>
+
 
   <h2>Réservez maintenant ce voyage temporel</h2>
   <div class="">
