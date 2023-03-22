@@ -17,17 +17,6 @@
       </div>
     </div>
   </div>
-
-
-  <h3>MES BOOKING</h3>
-    <div class="container-booking">
-      <% @user.bookings.each do |booking| %>
-        <%= booking.capsule.name %>
-        <%= booking.start_date %>
-        <%= booking.end_date %>
-        <%= link_to "Annuler ma réservation", user_path(@user), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      <% end %>
-    </div>
 <div>
   <h3 class="booking-title">Vos réservations</h1>
   <div class="container booking-container">
