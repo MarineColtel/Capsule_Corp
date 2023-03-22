@@ -1,6 +1,6 @@
-<div>
+<div class="container_show">
     <h1><%= @capsule.name %> - <%= @capsule.year %></h1>
-    <img src="<%= @capsule.picture %>" alt="">
+    <%= cl_image_tag @capsule.photos.first.key, width: 400, height: 400, crop: :fill %>
     <h3 class="mb-5"><%= @capsule.description %></h3>
     <h4>Nos conseils</h4>
     <p><%= @capsule.advices %></p>
