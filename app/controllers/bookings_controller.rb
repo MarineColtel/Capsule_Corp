@@ -18,16 +18,17 @@ class BookingsController < ApplicationController
     @booking.capsule = @capsule
     @booking.user = current_user
     if @booking.save!
-      redirect_to user_path(@booking.user)
+      redirect_to user_bookings_path(@booking.user)
     else
       render 'capsules/show', status: :unprocessable_entity
     end
   end
 
   def destroy
-    @user = current_user
     @booking.destroy
-    redirect_to user_path(@user), status: :see_other
+    @user = current_user
+    redirect_to user_bookings_path(@user), status: :see_other
+    raise
   end
 
   private
