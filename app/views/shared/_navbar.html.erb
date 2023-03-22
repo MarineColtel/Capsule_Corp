@@ -1,5 +1,5 @@
   <!-- Navbar -->
-  <nav class="navbar">
+<nav class="navbar">
     <div class="container">
       <div class='header-logo'>
         <%= link_to image_tag("LOGO officiel CAPS_CORP_blanc.png", class: "navbar-logo"), root_path %>
@@ -8,15 +8,14 @@
         <li class="nav-item">
           <%= link_to "Search", search_capsules_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "My Profile", root_path, class: "nav-link" %>
-        </li>
+        <li> <%= link_to "Se connecter", user_session_path, class: "nav-link" %></li>
         <li class="nav-item dropdown">
           <%= cl_image_tag("avatar_lu1q0p", class: "avatar") %>
           <div class="dropdown-menu">
             <%= link_to "Mon profil", root_path, class: "dropdown-item" %>
             <%= link_to "Mes réservations", root_path, class: "dropdown-item" %>
-            <%= link_to "Se déconnecter", root_path, class: "dropdown-item" %>
+            <%= link_to "Se déconnecter", destroy_user_session_path, class: "dropdown-item" %>
+
           </div>
         </li>
       </ul>

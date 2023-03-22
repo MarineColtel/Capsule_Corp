@@ -1,25 +1,35 @@
+.container_profil{
+  display: block;
+  justify-content: center;
+  margin-top: 32px;
+  height: 100%;
+}
+
 .identity{
-  background-color: white;
-  border: 1px solid grey;
-  border-radius: 5px;
-  box-shadow: -2px 2px 34px -12px rgba(0,0,0,0.75);
   padding: 32px;
   width: 550px;
   display: flex;
+  justify-content: center;
+  margin: auto;
 
 }
 .full-username{
   display: block;
 }
-.identity .avatar{
+.identity .avatar-container{
   height: 100px;
   width: 100px;
   margin-right: 32px;
 }
+.container-booking{
+  background-color: #0fd4c7;
+  padding: 32px;
+  width: 100%;
+  display: block;
+  margin: auto;
 
-
-.container{
-  display: flex;
-  justify-content: center;
-
+}
+h1,h2,h3{
+  text-align: center;
+  margin-top: 32px;
 }
