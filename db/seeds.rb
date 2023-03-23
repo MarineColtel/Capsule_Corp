@@ -7,7 +7,11 @@ Booking.destroy_all
 User.destroy_all
 
 20.times do
-  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "123456")
+  user = User.new(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,
+    email: Faker::Internet.email, password: "123456", avatar: Faker::Avatar.image)
+  file = URI.open(user[:avatar])
+  user.photo.attach(io: file, filename: "avatar.png", content_type: "image/png")
+  user.save!
 end
 
 Capsule.destroy_all
