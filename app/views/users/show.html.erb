@@ -19,7 +19,7 @@
   </div>
 <div>
   <h3 class="booking-title">Vos réservations</h1>
-  <div class="container booking-container">
+  <div class="booking-container">
     <% @user.bookings.each do |booking| %>
       <div class="booking-card">
         <%= cl_image_tag booking.capsule.photo.key, class: "booking-image" %>
