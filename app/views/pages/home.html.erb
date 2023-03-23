@@ -40,7 +40,7 @@
   <div class="container capsules-container">
     <% @capsules.each do |capsule| %>
       <div class="capsule-card">
-        <%= cl_image_tag capsule.photos.first.key, class: "capsule-image" %>
+        <%= cl_image_tag capsule.photo.key, class: "capsule-image" %>
         <div class="capsule-card-infos">
           <div class="capsule-details">
             <h2 class="capsule-name"><%= capsule.name %></h2>

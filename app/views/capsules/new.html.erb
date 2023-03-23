@@ -1,11 +1,11 @@
-<%= simple_form_for @capsule, html: { multipart: true } do |f| %>
+<%= simple_form_for @capsule do |f| %>
   <%= f.input :name, label: "Nom de la capsule" %>
   <%= f.input :year, label: "Année" %>
   <%= f.input :description, label: "Description", as: :text %>
   <%= f.input :advices, label: "Conseils", as: :text %>
   <%= f.input :price_per_day, label: "Prix par jour" %>
-  <%= f.input :picture, label: "Image principale", as: :file %>
-  <%= f.input :photos, label: "Autres photos", as: :file, input_html: { multiple: true } %>
+  <%= f.input :photo, label: "Image", as: :file %>
+  <%#= f.input :photos, label: "Autres photos", as: :file, input_html: { multiple: true } %>
 
   <%= f.button :submit, "Ajouter la capsule" %>
 <% end %>
