@@ -2,6 +2,7 @@
   <div data-controller="price-count">
     <%= f.input :start_date, label: "Date de départ", as: :string, input_html: { data: { controller: "datepicker", price_count_target: "start" } } %>
     <%= f.input :end_date, label: "Date de retour", as: :string, input_html: { data: { controller: "datepicker", price_count_target: "end", action: "change->price-count#totalPrice" } } %>
+    <%= f.hidden_field :total_price, id: "total_booking_price" %>
     <%= f.submit 'Réserver' %>
   </div>
 <% end %>
