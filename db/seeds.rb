@@ -140,7 +140,7 @@ end
 
 # Seeds pour booking
 
-40.times do
+80.times do
   start = Faker::Date.between(from: '2020-01-01T00:00:00.000Z', to: '2030-01-01T00:00:00.000Z')
   fin = start + 100
   capsule = Capsule.all.sample
