@@ -1,7 +1,7 @@
 <%= simple_form_for [@capsule, @booking] do |f| %>
   <div data-controller="price-count">
-    <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker", price_count_target: "start" } } %>
-    <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker", price_count_target: "end", action: "change->price-count#totalPrice" } } %>
+    <%= f.input :start_date, label: "Date de départ", as: :string, input_html: { data: { controller: "datepicker", price_count_target: "start" } } %>
+    <%= f.input :end_date, label: "Date de retour", as: :string, input_html: { data: { controller: "datepicker", price_count_target: "end", action: "change->price-count#totalPrice" } } %>
     <%= f.submit 'Réserver' %>
   </div>
 <% end %>
