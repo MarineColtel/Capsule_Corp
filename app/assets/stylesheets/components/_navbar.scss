@@ -51,10 +51,6 @@
   }
 }
 
-.avatar {
-  cursor: pointer;
-}
-
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -80,5 +76,3 @@
 .nav-item.dropdown:hover .dropdown-menu {
   display: block;
 }
-
-

@@ -16,7 +16,7 @@
         <% end %>
         <li class="nav-item dropdown">
           <% if current_user %>
-            <%= cl_image_tag("https://res.cloudinary.com/dk9lwcfea/image/upload/v1679321373/avatar_lu1q0p.jpg", class: "avatar") %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar-bordered" %>
             <div class="dropdown-menu">
               <%= link_to "Mon profil", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Mes réservations", user_path(current_user), class: "dropdown-item" %>

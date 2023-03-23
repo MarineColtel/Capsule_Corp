@@ -2,7 +2,7 @@
 <div class="container_profil">
   <div class="identity">
     <div class="avatar-container">
-      <%= cl_image_tag("avatar_lu1q0p", class: "avatar") %>
+      <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
     </div>
 
     <div class="informations">
