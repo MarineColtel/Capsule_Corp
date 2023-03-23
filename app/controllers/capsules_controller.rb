@@ -16,7 +16,8 @@ class CapsulesController < ApplicationController
 
   def create
     @capsule = Capsule.new(capsule_params)
-    if @capsule.save
+    @capsule.user = current_user
+    if @capsule.save!
       redirect_to capsule_path(@capsule)
     else
       render :new, status: :unprocessable_entity
