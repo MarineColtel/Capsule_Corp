@@ -6,27 +6,37 @@
 
   <div class="header-overlay"></div>
 
-  <div class="header-content">
-    <h1 class="header-title">Capsule Corp</h1>
-    <p class="header-subtitle">Découvrez le futur du voyage spatial</p>
+    <div class="header-content">
+      <h1 class="header-title">[apsu[e <strong>corp</strong></h1>
+      <p class="header-subtitle">Travelling without moving</p>
 
 
 
-<div class="container_home">
-<div id="search">
-    <%= simple_form_for :search, url: search_capsules_path, method: :get do |f| %>
-      <div class="form-group">
-        <%= f.input :query, label: 'Le voyage commence ici', class: "form-control" %>
+      <div class="container_home">
+      <div id="search">
+        <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+          <div class="search-form-control form-group">
+            <input class="form-control string required" type="text" placeholder="le voyage commence ici" name="search[query]" id="search_query" />
+            <button name="button" type="submit" class="btn btn-gradient">
+              <i class="fas fa-search"></i> Rechercher
+            </button>
+
+          </div>
+        <% end %>
       </div>
-      <%= f.button :submit, "Rechercher", class: "btn btn-primary" %>
-    <% end %>
+      <p class="header-description"><em>passionné de voyages, d'histoire ou tout simplement curieux<br>
+      venez revivre les evenements qui ont marqué l'Histoire</em></p>
+    </div>
   </div>
 </header>
 
 
 <!-- List of Capsules -->
 <div class='main-capsule-container'>
-  <h1 class="capsules-title">Liste des Capsules</h1>
+  <h1 class="capsules-title">les [apsu[es</h1>
+  <p>Concert mythique, évenement historique, bataille célèbre, rencontre sportive...<br>
+  <strong>Soyez présent </strong>(ou passé)</p>
+    </div>
   <div class="container capsules-container">
     <% @capsules.each do |capsule| %>
       <div class="capsule-card">

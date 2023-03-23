@@ -17,7 +17,7 @@ CAPSULES_DATA = [
     photo_url: "https://i.ytimg.com/vi/PLIAp5nr0q0/maxresdefault.jpg",
     params:
     {
-      name: "Concert Live Aid - Queen",
+      name: "QUEEN - CONCERT LIVE AID",
       year: 1985,
       advices: "N'oubliez pas d'apporter votre appareil photo et de profiter de l'énergie incroyable.",
       price_per_day: 150.0,

@@ -1,6 +1,6 @@
 <!-- List of Capsules -->
 <div class='main-capsule-container'>
-  <h1 class="capsules-title">Liste des Capsules</h1>
+  <h1 class="capsules-title">Liste des [apsu[es</h1>
   <div class="container capsules-container">
     <% @capsules.each do |capsule| %>
       <div class="capsule-card">
@@ -9,12 +9,15 @@
           <div class="capsule-details">
             <h2 class="capsule-name"><%= capsule.name %></h2>
             <p class="capsule-year"><%= capsule.year %></p>
+            <p class="capsule-country"><%= capsule.country %></p>
           </div>
           <div>
             <p class="capsule-description"><%= capsule.description %></p>
           </div>
-          <h2 class="card-trip-pricing">Tarif par jour : <%= capsule.price_per_day %>€</h2>
-          <%= link_to 'Show', capsule_path(capsule), class: "capsule-show-link" %>
+            <div class="footer-card">
+              <h2 class="card-trip-pricing">TARIF JOURNALIER <%= capsule.price_per_day %>€</h2>
+              <%= link_to 'Show', capsule_path(capsule), class: "capsule-show-link" %>
+            </div>
         </div>
       </div>
     <% end %>
