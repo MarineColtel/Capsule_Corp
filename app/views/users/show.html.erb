@@ -32,8 +32,8 @@
           </div>
           <div>
             <h4>Vos dates de voyage</h4>
-            <p class="booking-description"><%= booking.start_date %></p>
-            <p class="booking-description"><%= booking.end_date %></p>
+            <p class="booking-description"><%= booking.start_date.strftime("%d-%m-%Y") %></p>
+            <p class="booking-description"><%= booking.end_date.strftime("%d-%m-%Y") %></p>
           </div>
           <h2 class="card-trip-pricing">Le tarif par jour : <%= booking.capsule.price_per_day %>€</h2>
           <%= link_to "Annuler ma réservation", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
