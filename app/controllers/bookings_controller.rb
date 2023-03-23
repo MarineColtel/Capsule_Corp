@@ -17,6 +17,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.capsule = @capsule
     @booking.user = current_user
+    @capsule.user_id = current_user.user_id
+    @booking.statu = "en attente"
     if @booking.save!
       redirect_to user_path(@booking.user)
     else
@@ -29,6 +31,7 @@ class BookingsController < ApplicationController
     @user = current_user
     redirect_to user_path(@user), status: :see_other
   end
+
 
   private
 
