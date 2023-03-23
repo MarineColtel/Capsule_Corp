@@ -7,7 +7,9 @@
     <h3 class="mb-5"><%= @capsule.description %></h3>
     <div id="average_rating">
       <p>Note moyenne :
-      <%= @average_rating %> / 5 (<%= @rating_number %> notes laissées)
+      <%= @average_rating %> / 5 (<%= @rating_number %>
+      <%= @comments_number > 1? "notes laissées" : "note laissée" %>
+      )
       <%  @round_average_rating.times do  %>
         <i class="fa-solid fa-star" style="color: #f2b407;"></i>
       <% end %>
