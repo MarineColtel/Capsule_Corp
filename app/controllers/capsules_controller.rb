@@ -32,9 +32,9 @@ class CapsulesController < ApplicationController
       ratings << review.rating
       @comments << review.comment
     end
-    @average_rating = (ratings.sum(0.0) / ratings.size).round(1)
-    @round_average_rating = @average_rating.round(0)
     @rating_number = ratings.count
+    @rating_number > 0? @average_rating = (ratings.sum(0.0) / ratings.size).round(1) : @average_rating = 0
+    @round_average_rating = @average_rating.round(0)
     @comments_number = @comments.count
   end
 

@@ -52,6 +52,7 @@
 <%# commmentaires des users %>
 <div id="comments" class="container_show">
   <h3 class="mb-4">Tous les commentaires</h3>
+  <%= "Aucun commentaire n'a encore été déposé sur cette capsule." if @comments_number == 0 %>
   <% @capsule.reviews.each do |review| %>
     <p>
       <%  review.rating.round(0).times do  %>
