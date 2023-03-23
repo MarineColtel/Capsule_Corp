@@ -5,6 +5,16 @@
         <%= cl_image_tag @capsule.photo.key %>
     </div>
     <h3 class="mb-5"><%= @capsule.description %></h3>
+    <p>Note moyenne :
+    <%= @average_rating %> / 5 (<%= @rating_number %> notes laissées)
+    <%  @round_average_rating.times do  %>
+      <i class="fa-solid fa-star" style="color: #f2b407;"></i>
+    <% end %>
+    <%  (5-@round_average_rating).times do  %>
+      <i class="fa-regular fa-star" style="color: #f2b407;"></i>
+    <% end %>
+    </p>
+
     <div class="d-flex justify-content-between mt-4">
       <div id="conseil" class="border px-3">
         <h4 class="text-center">Nos conseils</h4>

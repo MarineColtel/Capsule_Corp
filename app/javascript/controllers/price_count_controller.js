@@ -14,6 +14,7 @@ export default class extends Controller {
     // Récupération éléments HTML dans la show-capsule & formatage adéquat
     const pricePerDayText = document.getElementById("price-per-day").innerText;
     const totalPriceElement = document.getElementById("total-price");
+    const bookingTotalPriceElement = document.getElementById("total_booking_price")
     const countPriceElement = document.getElementById("count-price");
     const titleServiceElement = document.getElementById("title-service");
     const servicePriceElement = document.getElementById("service-price");
@@ -30,6 +31,8 @@ export default class extends Controller {
     // affichage
     countPriceElement.innerText = `${pricePerDay} € x ${duration} jours`;
     totalPriceElement.innerText = `${tripPrice} €`;
+    bookingTotalPriceElement.value = totalPrice;
+    console.log("Booking total price element value:", bookingTotalPriceElement.value);
     titleServiceElement.innerText = `Frais de service`;
     servicePriceElement.innerText = `${servicePrice} €`;
     if (titleElement) {
