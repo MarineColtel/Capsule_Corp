@@ -3,12 +3,11 @@ class CapsulesController < ApplicationController
 
   def index
     @capsules = Capsule.all
-  end
-
-  def search
-    query = params[:search][:query]
-    @capsules = Capsule.where('name ILIKE :query OR year::text ILIKE :query OR advices ILIKE :query', query: "%#{query}%")
-    render :index
+    if params[:query]
+      @capsules = Capsule.search_by_name_and_years(params[:query])
+    else
+      @capsules = Capsule.all
+    end
   end
 
   def new
