@@ -25,7 +25,18 @@ class CapsulesController < ApplicationController
   end
 
   def show
+
     @booking = Booking.new
+    ratings = []
+    @comments = []
+    @capsule.reviews.each do |review|
+      ratings << review.rating
+      @comments << review.comment
+    end
+    @average_rating = (ratings.sum(0.0) / ratings.size).round(1)
+    @round_average_rating = @average_rating.round(0)
+    @rating_number = ratings.count
+
   end
 
   def edit
