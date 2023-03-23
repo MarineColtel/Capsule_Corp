@@ -40,3 +40,25 @@
     <% end %>
   </div>
 </div>
+<div>
+  <h3 class="booking-title">Les capsules que vous proposez</h1>
+  <% if @user.capsules.length == 0 %>
+    <p class="text-danger text-center mb-5">Vous ne proposez encore aucune capsule</p>
+  <% else %>
+    <div class="container booking-container">
+      <% @user.capsules.each do |capsule| %>
+        <div class="booking-card">
+          <%= cl_image_tag capsule.photo.key, class: "booking-image" %>
+          <div class="booking-card-infos">
+            <div class="booking-details">
+              <h2 class="booking-name"><%= capsule.name %></h2>
+              <p class="booking-year"><%= capsule.year %></p>
+            </div>
+            <h2 class="card-trip-pricing">Le tarif par jour : <%= capsule.price_per_day %>€</h2>
+            <%= link_to "Supprimer cette capsule", capsule_path(capsule), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <% end %>
+</div>
