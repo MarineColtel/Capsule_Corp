@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @bookings_received = Booking.joins(:capsule).where("capsules.user_id = ?", @user.id)
   end
 
   # CREATION D'UN NOUVEL UTILISATEUR

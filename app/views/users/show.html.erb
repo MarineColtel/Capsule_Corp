@@ -17,6 +17,8 @@
       </div>
     </div>
   </div>
+
+<%# on affiche toutes les réservations passées par l'utilisateur %>
 <div>
   <h3 class="booking-title">Vos réservations</h1>
   <div class="container booking-container">
@@ -40,6 +42,8 @@
     <% end %>
   </div>
 </div>
+
+<%# on affiche toutes les capsules crées par l'utilisateur %>
 <div>
   <h3 class="booking-title">Les capsules que vous proposez</h1>
   <% if @user.capsules.length == 0 %>
@@ -60,5 +64,34 @@
         </div>
       <% end %>
     </div>
+  <% end %>
+</div>
+
+<%# on affiche toutes les commandes passées auprès de l'utilisateur %>
+<div>
+  <h3 class="booking-title">Les réservations qui vous ont été passées</h1>
+  <% if @bookings_received.length == 0 %>
+    <p class="text-danger text-center mb-5">Vous n'avez reçu aucune commande</p>
+  <% else %>  <div class="container booking-container">
+    <% @bookings_received.each do |booking| %>
+      <div class="booking-card">
+        <%= cl_image_tag booking.capsule.photo.key, class: "booking-image" %>
+        <div class="booking-card-infos">
+          <div class="booking-details">
+            <h2 class="booking-name"><%= booking.capsule.name %></h2>
+            <p class="booking-year"><%= booking.capsule.year %></p>
+          </div>
+          <div>
+            <h4>Commande passée par :</h4>
+            <p><%= booking.user.first_name %><%= booking.user.last_name %></p>
+            <h4>Ses dates de voyage</h4>
+            <p class="booking-description"><%= booking.start_date %></p>
+            <p class="booking-description"><%= booking.end_date %></p>
+          </div>
+          <h2 class="card-trip-pricing">Le tarif par jour : <%= booking.capsule.price_per_day %>€</h2>
+        </div>
+      </div>
     <% end %>
+  </div>
+  <% end %>
 </div>
