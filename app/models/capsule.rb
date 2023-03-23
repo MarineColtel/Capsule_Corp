@@ -1,7 +1,7 @@
 class Capsule < ApplicationRecord
   has_many :bookings, dependent: :destroy
-  has_many_attached :photos
-  belongs_to :user
+  has_one_attached :photo
+  has_many :users
 
   validates :name, presence: true
   validates :year, presence: true
