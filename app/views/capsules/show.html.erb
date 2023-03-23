@@ -62,7 +62,8 @@
       <% end %>
         -  "<%= review.comment %>"  -
         <strong>  <%= review.booking.user.first_name %> <%= review.booking.user.last_name %></strong>
-
+         <span class="text-secondary">(<%= review.booking.start_date.day %>/<%= review.booking.start_date.month %>/<%= review.booking.start_date.year %>)
+         </span>
     </p>
   <% end %>
 </div>
