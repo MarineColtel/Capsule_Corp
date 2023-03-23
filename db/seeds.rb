@@ -128,7 +128,7 @@ CAPSULES_DATA = [
 CAPSULES_DATA.each do |capsule|
   file = URI.open(capsule[:photo_url])
   nouveau = Capsule.new(capsule[:params])
-  nouveau.photos.attach(io: file, filename: "image.png", content_type: "image/png")
+  nouveau.photo.attach(io: file, filename: "image.png", content_type: "image/png")
   nouveau.save!
 end
 

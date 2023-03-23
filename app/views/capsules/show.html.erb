@@ -2,7 +2,7 @@
 <div class="container_show d-flex">
   <div id="capsule-top">
     <div class="capsule-show-image">
-        <%= cl_image_tag @capsule.photos.first.key %>
+        <%= cl_image_tag @capsule.photo.key %>
     </div>
     <h3 class="mb-5"><%= @capsule.description %></h3>
     <div class="d-flex justify-content-between mt-4">
