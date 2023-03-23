@@ -9,24 +9,24 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2rem;
-  margin-bottom: 3rem;
-  align-items: center;
   justify-content: center;
+  margin-top: 32px;
 }
 
 .capsule-card {
   background-color: #f8f8f8;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(127, 127, 127, 0.1);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
 }
 
 .capsule-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(67, 67, 67, 0.2);
 }
 
 .capsule-image {
@@ -54,15 +54,21 @@
 }
 
 .capsule-name {
-  font-size: 1.4rem;
+  font-size: 15px;
   font-weight: 600;
-  margin-bottom: 0.5rem;
   text-align: center;
 }
 
 .capsule-year {
   font-weight: 300;
-  color: #777;
+  color: white;
+  font-size: 20px;
+  background-color:$gray;
+  padding: 8px;
+  border-radius: 47px;
+    position: absolute;
+    top: 176px;
+    left: 124px;
 }
 
 .capsule-description {
@@ -70,6 +76,7 @@
   color: #555;
   line-height: 1.4;
   margin-bottom: 1rem;
+
 
 }
 
@@ -82,7 +89,7 @@
 
 .capsule-show-link {
   display: inline-block;
-  background-color: #00b0ff;
+  background-color:$gray;
   color: #fff;
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -93,5 +100,14 @@
 }
 
 .capsule-show-link:hover {
-  background-color: #008fcc;
+  background-color: $blue;
+}
+.main-capsule-container h1{
+  color:  $gray;
+  margin: 0px;
+  padding: 32px
+
+}
+.main-capsule-container p{
+text-align: center;
 }

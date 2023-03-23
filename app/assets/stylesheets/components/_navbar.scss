@@ -1,7 +1,8 @@
 .navbar {
   display: flex;
-  background-color: #000000;
+  background-color: #ffffff;
   padding: 1rem 0;
+
 }
 
 .container {
@@ -10,16 +11,18 @@
   width: 100%;
   padding: 0 1rem;
   flex-grow: 1;
+
 }
 
 .navbar-logo {
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   color: #fff;
   text-decoration: none;
   max-width: 100%;
   height: auto;
   width: 100px;
+  margin-top: 8px;
 }
 
 .navbar-menu {
@@ -35,13 +38,16 @@
 
 .nav-link {
   display: inline-block;
-  font-size: 1.1rem;
-  color: #fff;
+  font-size: 11px;
+  font-weight:600;
+  color: $gray;
   text-decoration: none;
   transition: color 0.3s;
+  align-items: center;
+  margin-top: 8px;
 
   &:hover {
-    color: #00b0ff;
+    color: $blue;
   }
 }
 
