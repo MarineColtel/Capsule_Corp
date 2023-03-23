@@ -8,4 +8,10 @@ class Capsule < ApplicationRecord
   validates :advices, presence: true
   validates :price_per_day, presence: true
   # validates :picture, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_years, against: %i[name year],
+                                             using: {
+                                               tsearch: { prefix: true }
+                                             }
 end
