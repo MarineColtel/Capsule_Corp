@@ -4,19 +4,19 @@
   align-items: center;
   justify-content: space-around;
   padding: 8px;
-  background-color: #fff;
+  background-color: #ebebeb;
   position: sticky;
   z-index: 98;
-  top: 72px;
+  top: 70px;
 }
 
 .navigate {
   width: 200px;
-  background-color:$gray;
-  color: #fff;
+  color: $duck;
   text-decoration: none;
   padding: 8px;
-  border-radius: 4px;
+  border-radius: 50px;
+  border: 1px solid rgb(235, 235, 235);
   transition: background-color 0.3s;
   text-align: center;
   font-size: 14px;
