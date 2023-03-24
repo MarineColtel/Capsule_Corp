@@ -82,6 +82,7 @@
         <h4><%= booking.capsule.name %></h4>
         <p>Réservation faite par</h4>
         <h6><%= booking.user.first_name %> <%= booking.user.last_name %></h6>
+
         <p>Dates de la réservation</h4>
         <h6>du <%= booking.start_date.strftime("%d-%m-%Y") %> au <%= booking.end_date.strftime("%d-%m-%Y") %></h6>
       </div>

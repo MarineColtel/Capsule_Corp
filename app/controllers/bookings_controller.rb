@@ -32,6 +32,27 @@ class BookingsController < ApplicationController
     redirect_to user_path(@user), status: :see_other
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.statu = "confirmé"
+    @booking.save
+    if @booking.save!
+      redirect_to user_path(@booking.user)
+    else
+      render 'capsules/show', status: :unprocessable_entity
+    end
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.statu = "refusé"
+    @booking.save
+    if @booking.save!
+      redirect_to user_path(@booking.user)
+    else
+      render 'capsules/show', status: :unprocessable_entity
+    end
+  end
 
   private
 
