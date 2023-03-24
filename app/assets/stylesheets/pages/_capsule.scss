@@ -183,3 +183,25 @@
 #booking .d-flex {
   box-shadow: 0 2px 4px rgba(127, 127, 127, 0.1);
 }
+
+.reserve-btn {
+  background-color: #1D9A99;
+  opacity: 0.8;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(127, 127, 127, 0.1);
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reserve-btn:hover {
+  background-color: #1dadad;
+  box-shadow: 0 4px 8px rgba(127, 127, 127, 0.1);
+  opacity: 1;
+}
