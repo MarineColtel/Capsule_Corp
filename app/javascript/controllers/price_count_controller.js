@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import flatpickr from "flatpickr";
 
 // Connects to data-controller="price-count"
 export default class extends Controller {

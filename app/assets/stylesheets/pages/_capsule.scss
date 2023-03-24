@@ -8,9 +8,6 @@
   h2 {
     margin-top: 50;
   }
-  h3 {
-    margin:0!important;
-  }
 }
 
 #capsule-top {
@@ -37,6 +34,12 @@
   padding: 20px 10px;
 }
 
+#average_rating {
+  color: grey;
+  font-weight: lighter;
+  text-align: end;
+}
+
 #booking {
   width: 50%;
   background: #0D7377;
@@ -51,4 +54,12 @@
 #conseil {
   display: grid;
   align-content: center;
+}
+
+#comments {
+  background: white;
+  margin: 35px auto 35px;
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(50, 50, 93, .1);
 }
