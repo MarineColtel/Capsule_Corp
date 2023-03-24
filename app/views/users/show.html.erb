@@ -78,6 +78,7 @@
         <h4><%= booking.capsule.name %></h4>
         <p>Réservation faite par</h4>
         <h6><%= booking.user.first_name %> <%= booking.user.last_name %></h6>
+
         <p>Dates de la réservation</h4>
         <h6>du <%= booking.start_date.strftime("%d-%m-%Y") %> au <%= booking.end_date.strftime("%d-%m-%Y") %></h6>
       </div>
@@ -90,25 +91,8 @@
         <h6><%= link_to "Refuser", user_path(@user), class: "capsule-confirm-link" %></h6>
       </div>
     </div>
-<<<<<<< HEAD
-    <div class="card-product-infos">
-      <h4>Dates de la réservation</h4>
-      <h6>du <%= booking.start_date %> au <%= booking.end_date %></h5>
-    </div>
-    <div class="card-product-infos">
-      <h4>Prix total de la réservation</h4>
-      <h6><%= booking.total_price %></h5>
-    </div>
-    <div class="card-product-infos">
-      <h6><%= link_to "Accepter",{ data: { controller: "datepicker", price_count_target: "start" } } user_path(@user) %></h6>
-      <h6><%= link_to "Refuser", user_path(@user) %></h6>
-    </div>
-  </div>
-<% end %>
-=======
   <% end %>
 </div>
->>>>>>> c5c51c93d967bc13c678a6beb244fe4545ce297c
 
 <%# on affiche toutes les commandes passées auprès de l'utilisateur %>
 <div>
