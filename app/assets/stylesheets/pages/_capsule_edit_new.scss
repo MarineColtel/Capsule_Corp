@@ -1,0 +1,25 @@
+#capsule-form {
+  width: 50%;
+  margin: 20px auto;
+
+  label {
+    font-weight: 700;
+  }
+
+  .capsule-form-button {
+    color: red;
+    // display: inline-block;
+    background-color:$duck;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .capsule-form-button:hover {
+    background-color: $blue;
+  }
+}

@@ -1,0 +1,15 @@
+
+<h1>Modifier votre capsule</h1>
+<div id="capsule-form">
+  <%= simple_form_for @capsule do |f| %>
+    <%= f.input :name, label: "Nom de la capsule" %>
+    <%= f.input :year, label: "Année" %>
+    <%= f.input :description, label: "Description", as: :text %>
+    <%= f.input :advices, label: "Conseils", as: :text %>
+    <%= f.input :price_per_day, label: "Prix par jour" %>
+    <%= f.input :photo, label: "Image", as: :file %>
+    <%#= f.input :photos, label: "Autres photos", as: :file, input_html: { multiple: true } %>
+
+    <%= f.button :submit, "Enregistrer mes modifications", class: "capsule-form-button" %>
+  <% end %>
+</div>

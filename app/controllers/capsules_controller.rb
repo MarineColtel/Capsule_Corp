@@ -43,7 +43,7 @@ class CapsulesController < ApplicationController
 
   def update
     if @capsule.update(capsule_params)
-      redirect_to capsule_path(@capsule)
+      redirect_to user_path(current_user)
     else
       render :edit, status: :unprocessable_entity
     end
