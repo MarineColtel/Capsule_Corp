@@ -3,4 +3,9 @@ class PagesController < ApplicationController
   def home
     @capsules = Capsule.all
   end
+  def search
+    @capsules = Capsule.search(params[:query])
+    render :home
+
+  end
 end
