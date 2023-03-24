@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.capsule = @capsule
     @booking.user = current_user
-    @capsule.user_id = current_user.user_id
+    @capsule.user_id = current_user.id
     @booking.statu = "en attente"
     if @booking.save!
       redirect_to user_path(@booking.user)
