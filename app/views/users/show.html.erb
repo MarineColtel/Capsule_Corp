@@ -87,7 +87,7 @@
       <h6><%= booking.total_price %></h5>
     </div>
     <div class="card-product-infos">
-      <h6><%= link_to "Accepter", user_path(@user) %></h6>
+      <h6><%= link_to "Accepter",{ data: { controller: "datepicker", price_count_target: "start" } } user_path(@user) %></h6>
       <h6><%= link_to "Refuser", user_path(@user) %></h6>
     </div>
   </div>
@@ -119,4 +119,3 @@
     </div>
     <% end %>
   </div>
-  
