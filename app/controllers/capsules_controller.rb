@@ -51,7 +51,7 @@ class CapsulesController < ApplicationController
 
   def destroy
     @capsule.destroy
-    redirect_to capsules_path
+    redirect_to user_path
   end
 
   private
