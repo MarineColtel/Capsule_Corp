@@ -40,7 +40,7 @@
             <p class="booking-description"><%= booking.end_date.strftime("%d-%m-%Y") %></p>
           </div>
           <h2 class="card-trip-pricing">Montant total : <%= booking.total_price %>€</h2>
-          <%= link_to "Annuler ma réservation", booking_path(booking),
+          <%= link_to "Annuler ma réservation", booking_path(booking), class: "booking-delete-link",
           data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr de supprimer cette réservation ? AUCUN REMBOURSEMENT, NADA !"} %>
         </div>
       </div>
@@ -64,7 +64,9 @@
               <p class="booking-year"><%= capsule.year %></p>
             </div>
             <h2 class="card-trip-pricing">Le tarif par jour : <%= capsule.price_per_day %>€</h2>
-            <%= link_to "Supprimer cette capsule", capsule_path(capsule), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            <%= link_to "Modifier cette capsule", edit_capsule_path(capsule), class: "booking-edit-link" %>
+            <%= link_to "Supprimer cette capsule", capsule_path(capsule), class: "booking-delete-link",
+            data: {turbo_method: :delete, turbo_confirm: "Etes-vous sûr de supprimer cette capsule de votre catalogue ?"} %>
           </div>
         </div>
       <% end %>
