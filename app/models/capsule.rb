@@ -3,7 +3,7 @@ class Capsule < ApplicationRecord
   has_many :reviews, through: :bookings
   has_one_attached :photo
   belongs_to :user
-  
+
 
   validates :name, presence: true
   validates :year, presence: true
@@ -12,7 +12,7 @@ class Capsule < ApplicationRecord
 
 
   include PgSearch::Model
-  pg_search_scope :search_by_name_and_years, against: %i[name year],
+  pg_search_scope :search_by_name_and_years, against: %i[name year description],
                                              using: {
                                                tsearch: { prefix: true }
                                              }
