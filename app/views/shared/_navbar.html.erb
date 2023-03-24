@@ -6,9 +6,9 @@
       </div>
 
       <ul class="navbar-menu">
-        <li class="nav-item">
+        <%# <li class="nav-item">
           <%= link_to "SEARCH", search_capsules_path, class: "nav-link" %>
-        </li>
+        <%# </li> %>
         <% if current_user %>
           <li class="d-none"><%= link_to "SE CONNECTER", user_session_path, class: "nav-link" %></li>
         <% else %>
