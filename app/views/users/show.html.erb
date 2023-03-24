@@ -76,27 +76,30 @@
 
 <%# on affiche toutes les commandes passées auprès de l'owner de la capsule et qui sont attente %>
 <div class="container-product" id="a-confirmer">
-  <h3 class="booking-title">Demandes en attente de votre confirmation</h1>
-  <% @user.bookings.each do |booking| %>
-    <div class="card-product">
-      <%= cl_image_tag booking.capsule.photo.key %>
-      <div class="card-product-infos details">
-        <h4><%= booking.capsule.name %></h4>
-        <p>Réservation faite par</h4>
-        <h6><%= booking.user.first_name %> <%= booking.user.last_name %></h6>
-
-        <p>Dates de la réservation</h4>
-        <h6>du <%= booking.start_date.strftime("%d-%m-%Y") %> au <%= booking.end_date.strftime("%d-%m-%Y") %></h6>
-      </div>
-      <div class="card-product-infos price">
-        <h4>Montant total de la réservation</h4>
-        <h5><%= booking.total_price %>€</h5>
-      </div>
-      <div class="card-product-infos" id="buttons">
-        <h6><%= link_to "Accepter", user_path(@user), class: "capsule-confirm-link" %></h6>
-        <h6><%= link_to "Refuser", user_path(@user), class: "capsule-confirm-link" %></h6>
-      </div>
-    </div>
+  <h3 class="booking-title">Les réservations en attente de votre confirmation</h1>
+  <% @user.capsules.each do |capsule| %>
+    <% capsule.bookings.each do |booking| %>
+      <% if booking.statu == "en attente" %>
+        <div class="card-product">
+          <%= cl_image_tag booking.capsule.photo.key %>
+          <div class="card-product-infos" id="details">
+            <h4><%= booking.capsule.name %></h4>
+            <p>Réservation faite par</h4>
+            <h6><%= booking.user.first_name %> <%= booking.user.last_name %></h6>
+            <p>Dates de la réservation</h4>
+            <h6>du <%= booking.start_date.strftime("%d-%m-%Y") %> au <%= booking.end_date.strftime("%d-%m-%Y") %></h6>
+          </div>
+          <div class="card-product-infos" id="price">
+            <h4>Prix total de la réservation</h4>
+            <h5><%= booking.total_price %>€</h5>
+          </div>
+          <div class="card-product-infos" id="buttons">
+            <h6><%= button_to "Accepter", accept_booking_path(booking), method: :patch, class: "capsule-confirm-link" %></h6>
+            <h6><%= button_to "Refuser", decline_booking_path(booking), method: :patch, class: "capsule-confirm-link" %></h6>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
 
