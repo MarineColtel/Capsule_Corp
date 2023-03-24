@@ -137,3 +137,33 @@
 .booking-edit-link:hover {
   background-color: $blue;
 }
+
+.statut-pending {
+  background-color: $duck;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 4px;
+  color: white;
+  position: absolute;
+  top: 20px;
+}
+
+.statut-accept {
+  background-color: $blue;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 4px;
+  color: white;
+  position: absolute;
+  top: 20px;
+}
+
+.statut-decline {
+  background-color: #b63636;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 4px;
+  color: white;
+  position: absolute;
+  top: 20px;
+}
