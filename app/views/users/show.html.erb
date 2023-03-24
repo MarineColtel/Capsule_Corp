@@ -148,7 +148,7 @@
 <div class="container-product" id="commandes-refusées">
   <h3 class="booking-title">Les commandes que vous avez refusées</h1>
   <% if @bookings_received.length == 0 %>
-    <p class="text-danger text-center mb-5">Vous n'avez encore confirmé aucune commande</p>
+    <p class="text-danger text-center mb-5">Vous n'avez refusé aucune commande</p>
   <% else %>
     <% @user.capsules.each do |capsule| %>
       <% capsule.bookings.each do |booking| %>
