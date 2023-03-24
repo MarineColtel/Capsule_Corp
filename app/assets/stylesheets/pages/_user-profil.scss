@@ -1,0 +1,23 @@
+.container-user-page {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px;
+}
+
+.navigate {
+  width: 200px;
+  background-color:$gray;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  text-align: center;
+  font-size: 14px;
+}
+
+.navigate:hover {
+  background-color: $blue;
+}

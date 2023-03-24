@@ -1,4 +1,12 @@
-<h3>MON PROFIL UTILISATEUR</h3>
+<div class="container-user-page">
+  <%= link_to "Mon profil", "#profil", class: "navigate" %>
+  <%= link_to "Mes voyages confirmés", "#mes-voyages", class: "navigate" %>
+  <%= link_to "Vos capsules", "#capsules", class: "navigate" %>
+  <%= link_to "Réservations à confirmer", "#a-confirmer", class: "navigate" %>
+  <%= link_to "Réservations confirmées", "#commandes-confirmees", class: "navigate" %>
+</div>
+
+<h3 id="profil">MON PROFIL UTILISATEUR</h3>
 <div class="container_profil">
   <div class="identity">
     <div class="avatar-container">
@@ -11,15 +19,11 @@
           <p class="last-name">Nom: <%= @user.last_name %></p>
           <p class="email" >Email: <%= @user.email %></p>
       </div>
-      <div class="user-profile">
-          <button class= "btn btn-primary">PARTICULIER</button>
-          <button class= "btn btn-primary">PROFESSIONNEL</button>
-      </div>
     </div>
   </div>
 
 <%# on affiche toutes les voyages réservés par l'utilisateur %>
-<div>
+<div id="mes-voyages">
   <h3 class="booking-title">Vos voyages confirmés</h1>
   <div class="booking-container">
     <% @user.bookings.each do |booking| %>
@@ -44,7 +48,7 @@
 </div>
 
 <%# on affiche toutes les capsules crées par l'utilisateur %>
-<div>
+<div id="capsules">
   <h3 class="booking-title">Les capsules que vous proposez</h1>
   <% if @user.capsules.length == 0 %>
     <p class="text-danger text-center mb-5">Vous ne proposez encore aucune capsule</p>
@@ -69,7 +73,7 @@
 
 <%# on affiche toutes les commandes passées auprès de l'owner de la capsule et qui sont attente %>
 
-<div class="container-product">
+<div class="container-product" id="a-confirmer">
   <h3 class="booking-title">Les réservations en attente de votre confirmation</h1>
   <% @user.bookings.each do |booking| %>
     <div class="card-product">
@@ -111,7 +115,7 @@
 >>>>>>> c5c51c93d967bc13c678a6beb244fe4545ce297c
 
 <%# on affiche toutes les commandes passées auprès de l'utilisateur %>
-<div>
+<div id="commandes-confirmees">
   <h3 class="booking-title">Les réservations que vous avez confirmées</h1>
   <% if @bookings_received.length == 0 %>
     <p class="text-danger text-center mb-5">Vous n'avez reçu aucune commande</p>
