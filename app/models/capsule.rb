@@ -12,7 +12,7 @@ class Capsule < ApplicationRecord
 
 
   include PgSearch::Model
-  pg_search_scope :search_by_name_and_years, against: %i[name year description],
+  pg_search_scope :search_by_name_and_years, against: %i[name description year],
                                              using: {
                                                tsearch: { prefix: true }
                                              }
