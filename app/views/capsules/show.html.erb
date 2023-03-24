@@ -7,9 +7,7 @@
     <h3 class="mb-5"><%= @capsule.description %></h3>
     <div id="average_rating">
       <p>Note moyenne :
-      <%= @average_rating %> / 5 (<%= @rating_number %>
-      <%= @comments_number > 1? "notes laissées" : "note laissée" %>
-      )
+      <%= @average_rating %> / 5
       <%  @round_average_rating.times do  %>
         <i class="fa-solid fa-star" style="color: #f2b407;"></i>
       <% end %>
@@ -27,7 +25,9 @@
       </div>
       <div class="cadre-gris">
         <h4>Tarif</h4>
-        <p id="price-per-day"><%= @capsule.price_per_day %> €/j</p>
+            <span class="price-value"><%= @capsule.price_per_day %></span>
+            <span class="price-unit">€/j</span>
+          </p>
       </div>
     </div>
   </div>
@@ -53,18 +53,25 @@
 <div id="comments" class="container_show">
   <h3 class="mb-4">Tous les commentaires</h3>
   <%= "Aucun commentaire n'a encore été déposé sur cette capsule." if @comments_number == 0 %>
-  <% @capsule.reviews.each do |review| %>
-    <p>
-      <%  review.rating.round(0).times do  %>
-        <i class="fa-solid fa-star" style="color: #f2b407;"></i>
-      <% end %>
-      <%  (5-review.rating.round(0)).times do  %>
-        <i class="fa-regular fa-star" style="color: #f2b407;"></i>
-      <% end %>
-        -  "<%= review.comment %>"  -
-        <strong>  <%= review.booking.user.first_name %> <%= review.booking.user.last_name %></strong>
-         <span class="text-secondary">(<%= review.booking.start_date.day %>/<%= review.booking.start_date.month %>/<%= review.booking.start_date.year %>)
-         </span>
-    </p>
-  <% end %>
+  <div class="comment-list">
+    <div class="comments-wrapper">
+    <% @capsule.reviews.each do |review| %>
+      <div class="comment-item">
+        <div class="rating">
+          <%  review.rating.round(0).times do  %>
+            <i class="fa-solid fa-star" style="color: #f2b407;"></i>
+          <% end %>
+          <%  (5-review.rating.round(0)).times do  %>
+            <i class="fa-regular fa-star" style="color: #f2b407;"></i>
+          <% end %>
+        </div>
+        <p class="comment-text">"<%= review.comment %>"</p>
+        <div class="comment-author">
+          <strong><%= review.booking.user.first_name %> <%= review.booking.user.last_name %></strong>
+          <span class="text-secondary">(<%= review.booking.start_date.day %>/<%= review.booking.start_date.month %>/<%= review.booking.start_date.year %>)</span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  </div>
 </div>
