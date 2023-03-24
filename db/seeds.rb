@@ -2,8 +2,8 @@ require 'faker'
 require 'open-uri'
 
 # Destruction des Reviews et Booking en premier pour pouvoir supprimer les User ensuite
-# Review.destroy_all
-# Booking.destroy_all
+Review.destroy_all
+Booking.destroy_all
 # User.destroy_all
 #
 # 20.times do
@@ -140,9 +140,9 @@ require 'open-uri'
 
 # Seeds pour booking
 
-150.times do
+(Capsule.count * 3).times do
   start = Faker::Date.between(from: '2020-01-01T00:00:00.000Z', to: '2030-01-01T00:00:00.000Z')
-  fin = start + 100
+  fin = start + rand(1..30)
   capsule = Capsule.all.sample
   user = User.all.sample
   statut = ["confirmé", "en attente", "refusé"].sample
@@ -155,13 +155,14 @@ require 'open-uri'
     statu: statut
   }
   Booking.create!(params)
+  puts "booking créé"
 end
 
 # Seeds pour reviews sur la première moitié des bookings
 # Review.destroy_all
 
 y = Booking.first.id
-while y <= (Booking.first.id + (Booking.count / 2))
+while y < (Booking.first.id + Booking.count)
   params = {
     comment: Faker::Hipster.sentence,
     rating: rand(5),
@@ -169,4 +170,5 @@ while y <= (Booking.first.id + (Booking.count / 2))
   }
   Review.create!(params)
   y += 1
+  puts "review créée"
 end
