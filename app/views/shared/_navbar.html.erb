@@ -16,7 +16,9 @@
         <% end %>
         <li class="nav-item dropdown">
           <% if current_user %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar-bordered" %>
+            <%= link_to user_path(current_user) do %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar-bordered" %>
+            <% end %>
             <div class="dropdown-menu">
               <%= link_to "Mon profil", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Mes réservations", user_path(current_user), class: "dropdown-item" %>
