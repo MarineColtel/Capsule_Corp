@@ -36,6 +36,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.statu = "confirmé"
     @booking.save
+
     if @booking.save!
       redirect_to user_path(@booking.user)
     else
