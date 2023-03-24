@@ -145,12 +145,14 @@ end
   fin = start + 100
   capsule = Capsule.all.sample
   user = User.all.sample
+  statut = ["confirmé", "en attente", "refusé"].shuffle
   params = {
     capsule_id: capsule.id,
     user_id: user.id,
     start_date: start,
     end_date: fin,
-    total_price: capsule.price_per_day * (fin - fin)
+    total_price: capsule.price_per_day * (fin - start),
+    statu: statut
   }
   Booking.create!(params)
 end
