@@ -145,7 +145,7 @@ require 'open-uri'
   fin = start + 100
   capsule = Capsule.all.sample
   user = User.all.sample
-  statut = ["confirmé", "en attente", "refusé"].shuffle
+  statut = ["confirmé", "en attente", "refusé"].sample
   params = {
     capsule_id: capsule.id,
     user_id: user.id,
